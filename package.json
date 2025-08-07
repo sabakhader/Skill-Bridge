@@ -1,0 +1,17 @@
+{
+    "name": "skill-bridge-root",
+    "scripts": {
+        "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+        "dev:server": "cd server && npm start",
+        "dev:client": "cd client && npm run dev",
+        "start": "npx kill-port 3003 5003 && npm run dev",
+        "build": "cd client && npm run build",
+        "preview": "cd client && npm run preview",
+        "lint": "eslint . --ext .js,.jsx",
+        "lint:fix": "eslint . --ext .js,.jsx --fix",
+        "install-all": "npm install && cd client && npm install && cd ../server && npm install"
+    },
+    "devDependencies": {
+        "concurrently": "^8.2.2"
+    }
+}
